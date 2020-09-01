@@ -1,0 +1,394 @@
+:root {
+  --primary-bg-color: #000;
+  --secondary-bg-color: #f8f8f8;
+  --discreet-bg-color: #101010;
+  --spotlight-bg-color: #120a8f;
+  --color-text-spotlight: #fffafa;
+  --color-text: #c2c2c2;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  font-family: "Archivo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 900px;
+  transition: all 0.5s ease-in-out;
+}
+
+.header {
+  width: 100%;
+  padding: 0.7rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  position: fixed;
+  z-index: 1;
+}
+
+.header .logo {
+  width: 290px;
+  height: 80px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  background: url("./assets/logo1.svg") no-repeat left center;
+  background-size: contain;
+  cursor: pointer;
+}
+.logo::after {
+  content: "MICHEL FONSECA";
+  position: absolute;
+  right: 2;
+  color: var(--primary-bg-color);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  font-family: "Bowlby One SC", cursive;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.logo:hover::after {
+  opacity: 1;
+  transform: translateX(-28px);
+}
+
+.header nav {
+  letter-spacing: 0.3rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.header nav::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 3px;
+  width: 0%;
+  background-color: var(--primary-bg-color);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.header nav:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+.banner {
+  padding-top: 150px;
+  color: var(--color-text-spotlight);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+
+.banner h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Bowlby One SC", cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 2rem;
+}
+
+.banner .line {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.banner .line span {
+  display: block;
+  width: 2px;
+  background-color: #c2c2c2;
+  position: absolute;
+  animation: line 2s infinite ease-in-out;
+}
+
+@keyframes line {
+  0% {
+    height: 2;
+  }
+  33% {
+    height: 40px;
+  }
+  66% {
+    bottom: 0;
+  }
+  67% {
+    height: 2;
+  }
+}
+
+.title {
+  color: var(--color-text-spotlight);
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-family: "Archivo", sans-serif;
+}
+.skills {
+  margin-bottom: 10rem;
+}
+
+.sections {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.sections a {
+  height: 100px;
+  width: 100px;
+  margin: 20px 20px;
+  padding: 15px 0;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+}
+
+.sections :nth-child(1) {
+  background: url("./assets/images/vue.svg") rgba(255, 255, 255, 0.1) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sections :nth-child(1):hover {
+  background: url("./assets/images/vuejscolor.svg") rgba(255, 255, 255, 0.1)
+    no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sections :nth-child(2) {
+  background: url("./assets/images/react.svg") rgba(255, 255, 255, 0.1)
+    no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sections :nth-child(2):hover {
+  background: url("./assets/images/reactcolor.svg") rgba(255, 255, 255, 0.1)
+    no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sections :nth-child(3) {
+  background: url("./assets/images/html.svg") rgba(255, 255, 255, 0.1) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sections :nth-child(3):hover {
+  background: url("./assets/images/htmlcolor.svg") rgba(255, 255, 255, 0.1)
+    no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.sections :nth-child(4) {
+  background: url("./assets/images/css.svg") rgba(255, 255, 255, 0.1) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.sections :nth-child(4):hover {
+  background: url("./assets/images/csscolor.svg") rgba(255, 255, 255, 0.1)
+    no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sections :nth-child(5) {
+  background: url("./assets/images/js.svg") rgba(255, 255, 255, 0.1) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sections :nth-child(5):hover {
+  background: url("./assets/images/jscolor.svg") rgba(255, 255, 255, 0.1)
+    no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.about {
+  margin-bottom: 10rem;
+  color: var(--color-text-spotlight);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about .about-me-text {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  font-family: "Archivo", sans-serif;
+}
+
+.about .about-me-text h3 {
+  margin: 1rem 0;
+  font-size: 1.4rem;
+}
+
+.profile {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile .img {
+  width: 180px;
+  margin-top: 2rem;
+  border-radius: 90px;
+  padding: 8px;
+  border: 4px solid var(--spotlight-bg-color);
+}
+
+.profile span {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+}
+
+.profile .contacts {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2rem;
+}
+
+.profile a,
+.contact a {
+  color: var(--color-text-spotlight);
+  font-size: 1.5rem;
+  transition: all 0.4s;
+}
+
+.profile a:hover,
+.contact a:hover {
+  color: var(--color-text);
+  transform: scale(1.2);
+}
+
+.contact {
+  margin-bottom: 8rem;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.contact article span {
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.contact article .symbol {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--spotlight-bg-color);
+}
+
+.contact .social-networks {
+  display: flex;
+}
+
+.contact a {
+  display: block;
+  margin: 0 1rem;
+}
+
+footer {
+  width: 100%;
+  background: var(--discreet-bg-color);
+  height: 100px;
+  border-bottom: 8px solid var(--spotlight-bg-color);
+  color: var(--color-text);
+  font-family: "Archivo" sans-serif;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 1100px) {
+  .about {
+    display: grid;
+    grid-template-areas: "title title" "profile about";
+  }
+
+  .about h1 {
+    grid-area: title;
+  }
+
+  .about .profile {
+    grid-area: profile;
+    align-items: top;
+  }
+  .about .profile span {
+    font-size: 1.2rem;
+  }
+  .about .profile img {
+    margin-top: 0;
+  }
+  .about-me-text {
+    padding-left: 80px;
+    grid-area: about;
+  }
+  .about-me-text p {
+    text-align: initial;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .contact article > a {
+    font-size: 1rem;
+  }
+}
