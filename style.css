@@ -74,12 +74,17 @@ a {
   opacity: 1;
   transform: translateX(-28px);
 }
+.header nav {
+
+  display: none;
+}
 
 .header nav a{
   letter-spacing: 0.3rem;
   font-size: 1.6rem;
   cursor: pointer;
   position: relative;
+  margin: 0 .8rem;
 }
 
 .header nav a::before {
@@ -159,7 +164,7 @@ a {
   font-family: "Archivo", sans-serif;
 }
 #skills {
-  margin-bottom: 10rem;
+  margin-bottom: 14rem;
 }
 
 .sections {
@@ -280,6 +285,11 @@ a {
 #contact {
   margin-bottom: 10rem;
   color: var(--color-text);
+  text-align: center;
+}
+
+
+#contact section {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -383,7 +393,7 @@ footer {
     text-align: initial;
   }
 
-  #contact {
+  #contact section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -401,3 +411,8 @@ footer {
 }
  
 
+@media all and (min-width: 600px){
+  .header nav  {
+    display: initial;
+  }
+} 

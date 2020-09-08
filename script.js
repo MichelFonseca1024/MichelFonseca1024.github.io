@@ -49,3 +49,6 @@ if (target.length) {
     animeScrool();
   });
 }
+
+
+document.addEventListener('DOMContentLoaded',animeScrool() )
