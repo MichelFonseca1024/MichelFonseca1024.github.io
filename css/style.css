@@ -1,11 +1,12 @@
 :root {
   font-size: 60%;
-  --primary-bg-color: #000;
+  --primary-bg-color: #0c0c0c;
   --secondary-bg-color: #f8f8f8;
   --discreet-bg-color: #101010;
   --spotlight-bg-color: #120a8f;
   --color-text-spotlight: #fffafa;
   --color-text: #c2c2c2;
+  --color-blue-discrect: #90a0b0;
 }
 
 * {
@@ -29,6 +30,7 @@ body {
 a {
   text-decoration: none;
   color: var(--primary-bg-color);
+  color: var(--color-text-spotlight);
 }
 
 .container {
@@ -39,7 +41,7 @@ a {
 }
 
 .header {
-  width: 100%;
+  width: 100vw;
   padding: 1rem 1.6rem;
   display: flex;
   justify-content: space-between;
@@ -50,41 +52,23 @@ a {
 }
 
 .header .logo {
-  width: 29rem;
-  height: 7rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   position: relative;
   align-items: center;
-  background: url("./assets/logo1.svg") no-repeat left center;
+  background: url("../assets/logo1.svg") no-repeat left center;
   background-size: contain;
   cursor: pointer;
 }
-.logo::after {
-  content: "MICHEL FONSECA";
-  position: absolute;
-  right: 0;
-  color: var(--primary-bg-color);
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
-  font-family: "Bowlby One SC", cursive;
-  font-size: 1.6rem;
-  font-weight: 400;
-}
-.logo:hover::after {
-  opacity: 1;
-  transform: translateX(-28px);
-}
-.header nav {
 
-  display: none;
-}
-
-.header nav a{
+.header nav a {
   letter-spacing: 0.3rem;
   font-size: 1.6rem;
   cursor: pointer;
   position: relative;
-  margin: 0 .8rem;
+  margin: 0 0.8rem;
+  color: var(--primary-bg-color);
 }
 
 .header nav a::before {
@@ -104,54 +88,44 @@ a {
 }
 
 .banner {
-  padding-top: 150px;
+  padding-top: 25rem;
   color: var(--color-text-spotlight);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 10rem;
 }
 
-.banner h2 {
-  margin-top: 2.5rem;
+.banner h1 {
   margin-bottom: 1.5rem;
-  font-family: "Bowlby One SC", cursive;
+  font-family: "Archivo", sans-serif;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 2px;
   line-height: 2rem;
+  width: 55%;
 }
 
-.banner .line {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin-top: 1.5rem;
+.banner img {
+  width: 40%;
 }
 
-.banner .line span {
-  display: block;
-  width: 2px;
-  background-color: #c2c2c2;
-  position: absolute;
-  animation: line 2s infinite ease-in-out;
+.banner h1::after {
+  content: "|";
+  margin-left: 5px;
+  opacity: 1;
+  animation: blink 0.7s infinite;
 }
 
-@keyframes line {
+@keyframes blink {
   0% {
-    height: 0px;
+    opacity: 1;
   }
-  33% {
-    height: 40px;
+  50% {
+    opacity: 0;
   }
-  66% {
-    bottom: 0;
-  }
-  67% {
-    height: 0px;
+  100% {
+    opacity: 1;
   }
 }
 
@@ -176,47 +150,21 @@ a {
   flex-wrap: wrap;
 }
 
-.sections a {
+.sections section {
   height: 15rem;
   width: 15rem;
-  margin: 20px 20px;
+  margin: 10px 10px;
   padding: 15px 0;
   border-radius: 4px;
   transition: all 0.4s ease-in-out;
   position: relative;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.sections :nth-child(1) {
-  background: url("./assets/images/vuejscolor.svg") rgba(255, 255, 255, 0.1) no-repeat;
-  background-size: contain;
-  background-position: center center;
+section img {
+  width: 100%;
+  height: 100%;
 }
-
-.sections :nth-child(2) {
-  background: url("./assets/images/reactcolor.svg") rgba(255, 255, 255, 0.1)
-    no-repeat;
-  background-size: contain;
-  background-position: center center;
-}
-
-.sections :nth-child(3) {
-  background: url("./assets/images/htmlcolor.svg") rgba(255, 255, 255, 0.1) no-repeat;
-  background-size: contain;
-  background-position: center center;
-}
-
-.sections :nth-child(4) {
-  background: url("./assets/images/csscolor.svg") rgba(255, 255, 255, 0.1) no-repeat;
-  background-size: contain;
-  background-position: center center;
-}
-
-.sections :nth-child(5) {
-  background: url("./assets/images/jscolor.svg") rgba(255, 255, 255, 0.1) no-repeat;
-  background-size: contain;
-  background-position: center center;
-}
-
 #about {
   margin-bottom: 10rem;
   color: var(--color-text-spotlight);
@@ -229,6 +177,7 @@ a {
   width: 100%;
   text-align: center;
   font-size: 1.6rem;
+  line-height: 2rem;
   color: var(--color-text);
   font-family: "Archivo", sans-serif;
 }
@@ -271,7 +220,7 @@ a {
 }
 
 .profile a {
-  color: var(--color-text-spotlight);
+  color: var(--color-blue-discrect);
   font-size: 3.5rem;
   transition: all 0.4s;
 }
@@ -287,7 +236,6 @@ a {
   color: var(--color-text);
   text-align: center;
 }
-
 
 #contact section {
   display: flex;
@@ -343,25 +291,32 @@ footer {
   justify-content: center;
 }
 
-[data-anime]{
+[data-anime] {
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-[data-anime=left]{
+[data-anime="left"] {
   transform: translate3d(-120px, 0, 0);
 }
 
-[data-anime=left].animate{
+[data-anime="left"].animate {
   opacity: 1;
-  transform: translate3d( 0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
-
-@media all and (min-width: 800px) 
-{
+@media all and (min-width: 800px) {
   :root {
     font-size: 62.5%;
+  }
+  .header .logo {
+    height: 7rem;
+  }
+
+  .banner h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    min-height: 200px;
   }
 
   .sections a {
@@ -409,10 +364,50 @@ footer {
     margin-bottom: 2rem;
   }
 }
- 
 
-@media all and (min-width: 600px){
-  .header nav  {
-    display: initial;
+@media all and (min-width: 600px) {
+  .header .logo {
+    width: 29rem;
   }
-} 
+
+  .logo::after {
+    content: "MICHEL FONSECA";
+    position: absolute;
+    right: 0;
+    color: var(--primary-bg-color);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    font-family: "Bowlby One SC", cursive;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  .logo:hover::after {
+    opacity: 1;
+    transform: translateX(-28px);
+  }
+}
+
+@media all and (max-width: 650px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10rem;
+  }
+  .banner img {
+    order: -1;
+    margin-bottom: 30px;
+  }
+  .banner h1,
+  .banner img {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 370px) {
+  .header {
+    flex-direction: column;
+  }
+  .header .logo {
+    margin-bottom: 20px;
+  }
+}

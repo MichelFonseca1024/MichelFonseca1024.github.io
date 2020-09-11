@@ -35,7 +35,6 @@ const animeteClass = "animate";
 function animeScrool() {
   const windowTop = window.pageYOffset + (window.innerHeight * 3) / 4;
   target.forEach((element) => {
-    console.log(element.offsetTop);
     if (windowTop > element.offsetTop) {
       element.classList.add(animeteClass);
     } else {
@@ -51,4 +50,22 @@ if (target.length) {
 }
 
 
-document.addEventListener('DOMContentLoaded',animeScrool() )
+//write machine
+
+function writer(element) {
+  const letterArray = element.innerHTML.split("");
+  insertletter(letterArray, element);
+  element.innerHTML = ""
+}
+
+function insertletter(letterArray, element ) {
+  letterArray.forEach((letter, index) => {
+    setTimeout(()=> {
+      element.innerHTML += letter
+      console.log(letter);
+    }, 75 * index)
+  });
+}
+
+const textToWrite = document.querySelector(".banner h1");
+writer(textToWrite);
